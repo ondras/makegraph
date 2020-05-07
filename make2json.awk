@@ -8,6 +8,7 @@ function fullpaths(root_orig, paths_wordlist,
     split(paths_wordlist, paths_array)
     for (i in paths_array) {
         path = paths_array[i]
+        if (path == "|") { continue }
         root = gensub(/\/$/, "", "g", root_orig)
         if(match(path, /^\//)) {
             result = result " " path
